@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 focus:ring-slate-500 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm hover:shadow-md;
+  }
+  
+  .input {
+    @apply px-4 py-2.5 border border-slate-300 rounded-lg shadow-sm bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .input-mono {
+    @apply input;
+    font-family: 'JetBrains Mono', 'Monaco', 'Cascadia Code', monospace;
+    font-size: 0.875rem;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-200;
+  }
+  
+  .log-level-debug {
+    @apply text-slate-700 bg-slate-100 border border-slate-200;
+  }
+  
+  .log-level-info {
+    @apply text-blue-800 bg-blue-50 border border-blue-200;
+  }
+  
+  .log-level-warn {
+    @apply text-amber-800 bg-amber-50 border border-amber-200;
+  }
+  
+  .log-level-error {
+    @apply text-red-800 bg-red-50 border border-red-200;
+  }
+  
+  .log-level-fatal {
+    @apply text-red-900 bg-red-100 border border-red-300;
+  }
+  
+  .nav-link {
+    @apply flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all duration-200;
+  }
+  
+  .nav-link-active {
+    @apply bg-blue-50 text-blue-700 border-r-2 border-blue-600;
+  }
+  
+  .nav-link-inactive {
+    @apply text-slate-600 hover:bg-slate-50 hover:text-slate-900;
+  }
+}
+
+/* Enhanced scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Monaco Editor theme adjustments */
+.monaco-editor {
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+/* Enhanced uPlot chart styling */
+.uplot {
+  font-family: 'Inter', system-ui, sans-serif;
+  border-radius: 8px;
+}
+
+.uplot .u-legend {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.uplot .u-legend .u-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+/* Professional loading spinner */
+.spinner {
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-sm {
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Professional typography */
+.text-display {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', 'Monaco', 'Cascadia Code', monospace;
+}
+
+/* Status indicators */
+.status-online {
+  @apply bg-emerald-100 text-emerald-800 border border-emerald-200;
+}
+
+.status-offline {
+  @apply bg-red-100 text-red-800 border border-red-200;
+}
+
+.status-loading {
+  @apply bg-amber-100 text-amber-800 border border-amber-200;
+}
+
+/* Professional shadows */
+.shadow-professional {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow-professional-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced readability classes */
+.heading-xl {
+  @apply text-2xl font-bold tracking-tight text-slate-900 leading-tight;
+}
+
+.heading-lg {
+  @apply text-xl font-semibold tracking-tight text-slate-900 leading-snug;
+}
+
+.heading-md {
+  @apply text-lg font-medium text-slate-900 leading-normal;
+}
+
+.text-readable {
+  @apply text-slate-700 leading-relaxed;
+}
+
+.text-muted {
+  @apply text-slate-500 text-sm leading-normal;
+}
+
+.section-spacing {
+  @apply mb-8 space-y-6;
+}
+
+.card-section {
+  @apply bg-white rounded-xl border border-slate-200 shadow-sm p-6;
+}
+
+/* Chart container improvements */
+.chart-container {
+  @apply bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden;
+}
+
+.chart-header {
+  @apply p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between;
+}
+
+.chart-title {
+  @apply text-lg font-semibold text-slate-900;
+}
+
+.chart-subtitle {
+  @apply text-sm text-slate-600 mt-1;
+}
